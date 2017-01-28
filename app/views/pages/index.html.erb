@@ -1,14 +1,88 @@
-<div>
-
-<h1>get request at '/', from pages controller, to pages/index view</h1>
-
-<%= @someVar %>
-
-<p>
-    Get help on the Ruby on Rails Tutorial at the <a href="http://www.railstutorial.org/help">Rails Tutorial help page</a>. To get help on this sample app, see the <a href="http://www.railstutorial.org/book"><em>Ruby on Rails Tutorial</em></a>
-</p>
-
-
+<!-- TOP BANNER SECTION -->
+<div style="width:100%;background-color:#52BCA6">
+    <div style="color:#FFF">
+        <h2 style="font-weight:bold;margin-left:10px">#GYMBUDDY</h2>
+    </div>
+    <button style="background-color:#ff4d4d;position:absolute;top:0;right:0;padding:0;width:64px" id="account_button" class="button-primary">Logout</button>
 </div>
-
-<%= javascript_include_tag('example.js') %>
+<!-- (SEARCH EXERCISE / VIEW ROUTINE) BUTTONS SECTION -->
+<div style="width:100%;height:56px;background-color:#FFF;border-bottom:solid #52BCA6 1px">
+    <div>
+        <div class="row" style="text-align:center;margin-top:20px">
+            <div class="twelve columns">
+                <button style="margin-right:10%" id="exercise_button" class="button-primary">Search Exercises</button>
+                <button id="routine_button" class="">View Routines</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- (SEARCH EXERCISE / VIEW ROUTINE) CONTENT SECTION -->
+<div style="width:100%;min-height:350px;background-color:#F2F2F2">
+    <div id="exercise_content" class="animated slideInLeft">
+        <%= render :partial => 'partials/exercise_content' %>
+    </div>
+    <div id="routine_content" style="display:none">
+        <%= render :partial => 'partials/routine_content' %>
+    </div>
+</div>
+<!-- (VIEW WEEK / VIEW MONTH) BUTTONS SECTION -->
+<div style="width:100%;height:56px;margin-bottom:20px;background-color:#FFF;border-top:solid #52BCA6 1px">
+    <div>
+        <div class="row" style="text-align:center;margin-top:20px">
+            <div class="twelve columns">
+                <button style="margin-right:10%" id="week_button" class="button-primary">View Week</button>
+                <button id="month_button" class="">View Month</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- (WEEK LIST) BUTTONS SECTION -->
+<div id="weekList" class="animated slideInLeft" style="width:100%;height:45px;background-color:#52BCA6">
+    <div class="row" style="padding-top:5px">
+        <div style="color:white" class="twelve columns">
+            <div id="weekSelector" style="display:flex;flex-direction:row;justify-content:space-around;text-align:center">
+                <div id="monday_button" onClick="daySelector(this)">
+                    <h5 style="font-weight:normal;margin:0">MON</h5>
+                    <i style="color:#52BCA6;display:;margin-top:-21px" class="fa fa-caret-down fa-5x" aria-hidden="true"></i>
+                </div>
+                <div id="tuesday_button" onClick="daySelector(this)">
+                    <h5 style="font-weight:normal;margin:0">TUE</h5>
+                    <i style="color:#52BCA6;display:none;margin-top:-21px" class="fa fa-caret-down fa-5x" aria-hidden="true"></i>
+                </div>
+                <div id="wednesday_button" onClick="daySelector(this)">
+                    <h5 style="font-weight:normal;margin:0">WED</h5>
+                    <i style="color:#52BCA6;display:none;margin-top:-21px " class="fa fa-caret-down fa-5x " aria-hidden="true "></i>
+                </div>
+                <div id="thursday_button" onClick="daySelector(this)">
+                    <h5 style="font-weight:normal;margin:0">THU</h5>
+                    <i style="color:#52BCA6;display:none;margin-top:-21px" class="fa fa-caret-down fa-5x" aria-hidden="true"></i>
+                </div>
+                <div id="friday_button" onClick="daySelector(this)">
+                    <h5 style="font-weight:normal;margin:0">FRI</h5>
+                    <i style="color:#52BCA6;display:none;margin-top:-21px " class="fa fa-caret-down fa-5x " aria-hidden="true "></i>
+                </div>
+                <div id="saturday_button" onClick="daySelector(this)">
+                    <h5 style="font-weight:normal;margin:0">SAT</h5>
+                    <i style="color:#52BCA6;display:none;margin-top:-21px" class="fa fa-caret-down fa-5x" aria-hidden="true"></i>
+                </div>
+                <div id="sunday_button" onClick="daySelector(this)">
+                    <h5 style="font-weight:normal;margin:0">SUN</h5>
+                    <i style="color:#52BCA6;display:none;margin-top:-21px " class="fa fa-caret-down fa-5x " aria-hidden="true "></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- (VIEW WEEK / VIEW MONTH) CONTENTS SECTION -->
+<div id="date_box" style="width:100%;height:300px;margin-top:30px">
+    <div class="container" style="height:100%">
+        <div style="width:100%;height:100%;border:1px solid #E1E1E1;border-radius:4px">
+        </div>
+    </div>
+</div>
+<div style="width:100%;height:50px;margin-top:40px;display:flex;justify-content:space-around ">
+    <p>About</p>
+    <p>Feedback</p>
+    <p>FAQ</p>
+</div>
+<%= javascript_include_tag 'example' %>
