@@ -6,17 +6,27 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= render 'layouts/shim' %>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-    <%= render 'layouts/header' %>
-    <%= yield %>
-    <div class="container">
-    <%= render 'layouts/footer' %>
+    <div id="animatedModal" style="color:white;width:50px">
+        <div class="close-animatedModal">
+            <h1>CLOSE MODAL</h1>
+        </div>
+        <div class="modal-content">
+            <br>
+            <p>Create a new routine by searching for and adding individual exercises to the list, when you are done, make sure to click save. You can modify or delete your saved routines at any time on the previous page.</p>
+            <p>Name of the routine: </p>
+            <p>Type of routine:</p>
+            <p>!Exercise Search Bar Here!</p>
+            <p>Some Content Here?</p>
+            <p>Some Content Here?</p>
+            <p>Some Content Here?</p>
+        </div>
     </div>
+    <%= yield %>
 </body>
 
 </html>

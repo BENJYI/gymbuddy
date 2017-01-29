@@ -1,9 +1,13 @@
 console.log('example.js loaded');
 
+const testFunc = function(node) {
+	console.log(node);
+}
+
 const daySelector = function(node) {
-
     $(".fa-caret-down").hide();
-
+    $(".boldable").css("font-weight", "normal");
+    node.childNodes[1].style.fontWeight = "bold";
     node.childNodes[3].classList.add("animated", "bounceIn");
     node.childNodes[3].style.display = "";
 };
@@ -39,7 +43,7 @@ document.getElementById("routine_button").addEventListener("click", function() {
 document.getElementById("week_button").addEventListener("click", function() {
     let weekList = document.getElementById("weekList");
     weekList.style.display = "block";
-    weekList.className = "animated slideInLeft";
+    weekList.className = "animated fadeInUp";
 
     document.getElementById("week_button").className = "button-primary";
     document.getElementById("month_button").className = "";
@@ -48,7 +52,7 @@ document.getElementById("week_button").addEventListener("click", function() {
 //month view button toggle logic
 document.getElementById("month_button").addEventListener("click", function() {
     let weekList = document.getElementById("weekList");
-    weekList.className = "animated slideOutLeft";
+    weekList.className = "animated fadeOutDown";
     setTimeout(function() { weekList.style.display = "none"; }, 600);
 
     document.getElementById("week_button").className = "";
